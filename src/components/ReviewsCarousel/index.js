@@ -1,21 +1,24 @@
-// Write your code here
 import './index.css'
 
 import {Component} from 'react'
 
 class ReviewsCarousel extends Component {
-  state = {indexNo: 0}
+  state = {
+    indexNo: 0,
+  }
 
   onPrevReview = () => {
     const {indexNo} = this.state
+
     if (indexNo > 0) {
       this.setState(prevState => ({indexNo: prevState.indexNo - 1}))
     }
   }
 
   onNextReview = () => {
-    const {indexNo} = this.state
     const {reviewsList} = this.props
+    const {indexNo} = this.state
+
     if (indexNo < reviewsList.length - 1) {
       this.setState(prevState => ({indexNo: prevState.indexNo + 1}))
     }
